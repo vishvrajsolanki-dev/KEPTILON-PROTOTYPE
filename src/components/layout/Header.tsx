@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { arcVentures } from "@/data/ventures";
+import { arcStages } from "@/data/arc";
 import { useTheme } from "@/lib/theme";
 import { Button } from "@/components/ui/Button";
 
@@ -29,23 +28,20 @@ export function Header() {
         Skip to content
       </a>
       <div className="container flex h-[72px] items-center justify-between gap-4">
-        <Link href="/" className="flex min-h-11 items-center" aria-label="Keptilon home">
-          <Image
-            src={theme === "night" ? "/keptilon-logo-dark.png" : "/keptilon-logo.png"}
-            alt="Keptilon"
-            width={120}
-            height={30}
-            className="h-[28px] w-auto"
-            priority
-          />
+        <Link
+          href="/"
+          className="font-[family-name:var(--font-fraunces)] text-[1.15rem] font-semibold tracking-[0.08em] text-[var(--ink)]"
+          aria-label="Keptilon home"
+        >
+          KEPTILON
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative py-2 text-[0.85rem] font-medium text-[var(--ink-2)] transition-colors hover:text-[var(--ink)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--green)] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              className={`relative py-2 text-[0.82rem] font-medium tracking-wide text-[var(--ink-2)] transition-colors hover:text-[var(--ink)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--green)] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
                 pathname === link.href ? "text-[var(--ink)] after:scale-x-100" : ""
               }`}
             >
@@ -60,7 +56,7 @@ export function Header() {
           >
             <button
               type="button"
-              className="flex items-center gap-1 py-2 text-[0.85rem] font-medium text-[var(--ink-2)] hover:text-[var(--ink)]"
+              className="flex items-center gap-1 py-2 text-[0.82rem] font-medium tracking-wide text-[var(--ink-2)] hover:text-[var(--ink)]"
               aria-expanded={venturesOpen}
               aria-haspopup="true"
               onClick={() => setVenturesOpen((v) => !v)}
@@ -71,8 +67,8 @@ export function Header() {
               </span>
             </button>
             {venturesOpen && (
-              <div className="absolute left-0 top-full min-w-[220px] rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] p-2 shadow-[var(--shadow-lift)]">
-                {arcVentures.map((v) => (
+              <div className="absolute left-0 top-full min-w-[240px] rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] p-2 shadow-[var(--shadow-lift)]">
+                {arcStages.map((v) => (
                   <Link
                     key={v.id}
                     href={v.href}
@@ -99,7 +95,6 @@ export function Header() {
             onClick={toggleTheme}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--line)] text-[var(--ink-2)] transition hover:border-[var(--ink-3)] hover:text-[var(--ink)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--green)]"
             aria-label={theme === "parchment" ? "Switch to night mode" : "Switch to parchment mode"}
-            title={theme === "parchment" ? "Night" : "Parchment"}
           >
             {theme === "parchment" ? "☾" : "☀"}
           </button>
@@ -138,7 +133,7 @@ export function Header() {
             <p className="mt-3 px-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink-3)]">
               Ventures
             </p>
-            {arcVentures.map((v) => (
+            {arcStages.map((v) => (
               <Link
                 key={v.id}
                 href={v.href}

@@ -1,150 +1,136 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
-import { arcVentures } from "@/data/ventures";
-import { ventureImages } from "@/data/content";
+import { StageIcon } from "@/components/ui/StageIcon";
+import { arcStages } from "@/data/arc";
 
 export function ArcSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-12% 0px" });
+  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const reduce = useReducedMotion();
 
   return (
-    <section id="arc" className="section scroll-mt-24 bg-[var(--bg-soft)]" ref={ref}>
+    <section id="arc" className="section scroll-mt-24" ref={ref}>
       <div className="container">
-        <div className="mb-12 max-w-[42rem]">
-          <p className="eyebrow">The Arc</p>
+        <div className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="eyebrow justify-center">The Arc</p>
           <h2 className="display mt-4 text-[clamp(2rem,3.8vw,3rem)]">
             Start where you are.
           </h2>
-          <p className="lede mt-4">
-            Five stages of a life and a company. Pick the door that sounds like
-            you — each venture keeps its own world under one house.
+          <p className="lede mx-auto mt-4">
+            Five ventures. Five life stages. One continuous journey.
           </p>
         </div>
 
-        <div className="mb-14 hidden overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)] p-6 md:block md:p-8">
+        {/* Locked A: Stepping-stone / column journey */}
+        <div className="relative mb-16 hidden md:block">
           <svg
-            viewBox="0 0 1000 180"
-            className="w-full"
-            role="img"
-            aria-label="Life arc from Self to Capital"
+            className="pointer-events-none absolute left-[6%] right-[6%] top-[72px] h-16 w-[88%]"
+            viewBox="0 0 1000 80"
+            preserveAspectRatio="none"
+            aria-hidden
           >
             <motion.path
-              d="M50 110 C 220 30, 360 30, 500 95 S 780 170, 950 75"
+              d="M20 50 C 180 10, 320 10, 500 45 S 820 90, 980 30"
               fill="none"
               stroke="var(--green)"
-              strokeWidth="2.5"
+              strokeWidth="2"
               strokeLinecap="round"
               initial={reduce ? false : { pathLength: 0 }}
               animate={inView || reduce ? { pathLength: 1 } : { pathLength: 0 }}
-              transition={{ duration: reduce ? 0 : 1.05, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: reduce ? 0 : 1, ease: [0.16, 1, 0.3, 1] }}
             />
-            {arcVentures.map((v, i) => {
-              const x = 50 + i * 225;
-              const y = [110, 58, 72, 118, 78][i];
-              return (
-                <g key={v.id}>
-                  <motion.circle
-                    cx={x}
-                    cy={y}
-                    r="12"
-                    fill={v.accent}
-                    initial={reduce ? false : { opacity: 0, scale: 0.5 }}
+          </svg>
+
+          <ol className="relative grid grid-cols-5 gap-4">
+            {arcStages.map((stage, i) => (
+              <li key={stage.id}>
+                <Link
+                  href={stage.href}
+                  className="group flex h-full flex-col items-center px-2 text-center"
+                >
+                  <motion.span
+                    className="mb-3 font-[family-name:var(--font-fraunces)] text-[0.95rem] italic leading-snug"
+                    style={{ color: stage.accent }}
+                    initial={reduce ? false : { opacity: 0, y: 8 }}
                     animate={
                       inView || reduce
-                        ? { opacity: 1, scale: 1 }
-                        : { opacity: 0, scale: 0.5 }
+                        ? { opacity: 1, y: 0 }
+                        : { opacity: 0, y: 8 }
                     }
-                    transition={{ delay: reduce ? 0 : 0.18 + i * 0.1 }}
-                  />
-                  <motion.circle
-                    cx={x}
-                    cy={y}
-                    r="20"
-                    fill="none"
-                    stroke={v.accent}
-                    strokeOpacity="0.25"
-                    initial={reduce ? false : { opacity: 0 }}
-                    animate={inView || reduce ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ delay: reduce ? 0 : 0.28 + i * 0.1 }}
-                  />
-                  <text
-                    x={x}
-                    y={y + 42}
-                    textAnchor="middle"
-                    fill="var(--ink-3)"
-                    style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em" }}
+                    transition={{ delay: reduce ? 0 : 0.1 + i * 0.08 }}
                   >
-                    {v.stage.toUpperCase()}
-                  </text>
-                  <text
-                    x={x}
-                    y={y + 64}
-                    textAnchor="middle"
-                    fill="var(--ink)"
-                    style={{ fontSize: 17, fontFamily: "var(--font-fraunces)" }}
+                    “{stage.desire.replace(/\.$/, "")}”
+                  </motion.span>
+                  <span
+                    className="relative z-[1] flex h-[72px] w-[72px] items-center justify-center rounded-full border-2 bg-[var(--bg)] shadow-[var(--shadow-soft)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[var(--shadow-lift)]"
+                    style={{ borderColor: stage.accent }}
                   >
-                    {v.name}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
+                    <StageIcon
+                      name={stage.icon as "self"}
+                      color={stage.accent}
+                      size={30}
+                    />
+                  </span>
+                  <span
+                    className="mt-5 display text-2xl"
+                    style={{ color: stage.accent }}
+                  >
+                    {stage.name}
+                  </span>
+                  <span
+                    className="mt-1 text-[0.68rem] font-bold uppercase tracking-[0.18em]"
+                    style={{ color: stage.accent }}
+                  >
+                    {stage.stage}
+                  </span>
+                  <span className="mt-3 text-sm leading-snug text-[var(--ink-2)]">
+                    {stage.detail}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        <ul className="arc-list flex flex-col gap-3">
-          {arcVentures.map((v) => (
-            <li key={v.id}>
-              <Link
-                href={v.href}
-                className="arc-row group grid grid-cols-1 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] md:grid-cols-[140px_1fr_auto]"
-              >
-                <div className="relative hidden h-full min-h-[110px] md:block">
-                  <Image
-                    src={ventureImages[v.id]}
-                    alt=""
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                    sizes="140px"
-                  />
-                </div>
-                <div className="flex flex-col justify-center gap-2 px-5 py-5 md:px-7">
-                  <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[var(--ink-3)]">
+        {/* Locked B: Editorial rows (primary on mobile, companion on desktop) */}
+        <div>
+          <p className="mb-4 text-center text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--ink-3)] md:text-left">
+            Choose your door
+          </p>
+          <ul className="arc-list flex flex-col gap-2">
+            {arcStages.map((stage) => (
+              <li key={stage.id}>
+                <Link
+                  href={stage.href}
+                  className="arc-row group grid grid-cols-1 items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] px-5 py-4 transition md:grid-cols-[12rem_1fr_auto] md:gap-6 md:px-6 md:py-5"
+                >
+                  <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[var(--ink-3)] transition group-hover:text-[var(--ink)]">
                     <span
                       className="mr-2 inline-block h-2 w-2 rounded-full align-middle"
-                      style={{ background: v.accent }}
+                      style={{ background: stage.accent }}
                     />
-                    {v.stage} · {v.who}
+                    {stage.who}
                   </span>
-                  <span className="font-[family-name:var(--font-fraunces)] text-[clamp(1.35rem,2.5vw,1.9rem)] italic leading-snug text-[var(--ink)] transition duration-300 group-hover:translate-x-1">
-                    “{v.desire.replace(/\.$/, "")}”
+                  <span className="font-[family-name:var(--font-fraunces)] text-[clamp(1.3rem,2.4vw,1.85rem)] italic text-[var(--ink)] transition duration-300 group-hover:translate-x-2">
+                    “{stage.desire.replace(/\.$/, "")}”
                   </span>
-                  <span className="text-sm text-[var(--ink-2)]">{v.oneLiner}</span>
-                </div>
-                <div className="flex items-center justify-between gap-3 border-t border-[var(--line)] px-5 py-4 md:border-t-0 md:px-6">
-                  <span className="text-sm font-bold text-[var(--ink)]">{v.name}</span>
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-sm text-[var(--ink)] transition duration-300 group-hover:border-transparent group-hover:text-white"
-                    style={{ ["--accent" as string]: v.accent }}
-                    aria-hidden
+                    className="inline-flex items-center gap-2 text-[0.78rem] font-bold uppercase tracking-[0.1em]"
+                    style={{ color: stage.accent }}
                   >
-                    <span className="group-hover:hidden">→</span>
-                    <span
-                      className="hidden h-10 w-10 items-center justify-center rounded-full group-hover:flex"
-                      style={{ background: v.accent }}
-                    >
+                    {stage.name}
+                    <span aria-hidden className="transition group-hover:translate-x-1">
                       →
                     </span>
                   </span>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

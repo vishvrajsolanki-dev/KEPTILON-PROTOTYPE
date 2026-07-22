@@ -1,31 +1,43 @@
 import Link from "next/link";
-import { arcVentures, CONTACT_EMAIL } from "@/data/ventures";
+import { StageIcon } from "@/components/ui/StageIcon";
+import { arcStages } from "@/data/arc";
+import { CONTACT_EMAIL } from "@/data/ventures";
 
 export function Footer() {
   return (
     <footer className="border-t border-[var(--line)] bg-[var(--bg)]">
       <div className="container py-14">
-        <div className="mb-10">
-          <p className="eyebrow mb-4">The Arc</p>
-          <div className="flex flex-wrap items-center gap-3 md:gap-2">
-            {arcVentures.map((v, i) => (
-              <div key={v.id} className="flex items-center gap-2 md:gap-3">
+        <div className="mb-12 text-center md:text-left">
+          <p className="font-[family-name:var(--font-fraunces)] text-lg tracking-[0.12em] text-[var(--ink)]">
+            KEPTILON
+          </p>
+          <p className="mt-2 text-sm text-[var(--ink-3)]">
+            One house for the whole arc.
+          </p>
+        </div>
+
+        <div className="mb-12">
+          <p className="mb-5 text-center text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[var(--ink-3)] md:text-left">
+            The Arc
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start md:gap-6">
+            {arcStages.map((v, i) => (
+              <div key={v.id} className="flex items-center gap-4 md:gap-6">
                 <Link
                   href={v.href}
-                  className="group flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--bg-soft)] px-3 py-2 text-sm transition hover:border-[var(--green)]"
+                  className="group flex flex-col items-center gap-2 text-center"
                 >
                   <span
-                    className="h-2 w-2 rounded-full"
-                    style={{ background: v.accent }}
-                    aria-hidden
-                  />
-                  <span className="font-semibold text-[var(--ink)]">{v.stage}</span>
-                  <span className="text-[var(--ink-3)]">·</span>
-                  <span className="text-[var(--ink-2)] group-hover:text-[var(--ink)]">
-                    {v.name}
+                    className="flex h-11 w-11 items-center justify-center rounded-full border bg-[var(--bg-elevated)] transition group-hover:-translate-y-0.5"
+                    style={{ borderColor: `${v.accent}66` }}
+                  >
+                    <StageIcon name={v.icon as "self"} color={v.accent} size={20} />
+                  </span>
+                  <span className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--ink-3)]">
+                    {v.stage}
                   </span>
                 </Link>
-                {i < arcVentures.length - 1 && (
+                {i < arcStages.length - 1 && (
                   <span className="hidden text-[var(--ink-3)] md:inline" aria-hidden>
                     →
                   </span>
@@ -39,7 +51,10 @@ export function Footer() {
           <p className="text-sm text-[var(--ink-3)]">
             © {new Date().getFullYear()} Keptilon Universe Pvt Ltd
           </p>
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[var(--ink-3)]" aria-label="Legal">
+          <nav
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[var(--ink-3)]"
+            aria-label="Legal"
+          >
             <Link href="/contact" className="min-h-11 inline-flex items-center hover:text-[var(--ink)]">
               Contact
             </Link>

@@ -14,38 +14,56 @@ export const metadata: Metadata = {
 export default function DestinyPage() {
   return (
     <main id="main">
-      <section className="section pb-12 pt-20 md:pt-24">
+      <section className="pb-10 pt-8 md:pt-10">
         <div className="container">
-          <ArcCrumb active="destiny" />
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
+          <div className="mb-8 flex items-center gap-3">
+            <Link
+              href="/"
+              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+            >
+              KEPTILON
+            </Link>
+            <span className="text-[var(--line)]" aria-hidden>
+              |
+            </span>
+            <span className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--destiny)]">
+              Destiny
+            </span>
+          </div>
+
+          <div className="grid items-stretch overflow-hidden lg:grid-cols-2 lg:rounded-2xl lg:border lg:border-[var(--line)]">
+            <div className="flex flex-col justify-center py-8 lg:px-10 lg:py-14">
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--destiny)]">
                 Astrology · Numerology · Wellness
               </p>
-              <h1 className="display mt-4 text-[clamp(2.1rem,4.2vw,3.4rem)]">
+              <h1 className="display mt-4 text-[clamp(2.1rem,4.2vw,3.3rem)]">
                 Your birth chart does not make you rich or healthy. Your decisions do.
               </h1>
-              <p className="lede mt-6 text-[1.1rem]">
+              <p className="lede mt-6 text-[1.08rem]">
                 We read the chart, then we stay until you have acted on it.
                 Insight that stops at the reading is entertainment.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="#enroll">Start Journey</Button>
+                <Button href="#enroll">Begin your reading</Button>
                 <Button href="/#arc" variant="ghost">
-                  Back to the Arc
+                  Back to the Arc →
                 </Button>
               </div>
             </div>
-            <div className="media-frame relative aspect-[4/3]">
+            <div className="relative min-h-[300px]">
               <Image
                 src="/images/visual-destiny-hero.jpg"
                 alt="Calm guidance space for Destiny readings"
                 fill
                 priority
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 48vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
+          </div>
+
+          <div className="mt-8">
+            <ArcCrumb active="destiny" />
           </div>
         </div>
       </section>

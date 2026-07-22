@@ -6,6 +6,8 @@ import { ArcCrumb } from "@/components/ventures/ArcCrumb";
 import { ventureImages } from "@/data/content";
 import { ventures, type VentureId } from "@/data/ventures";
 
+/* Early ventures share locked skeleton: branch mark, split hero, Arc crumb */
+
 type EarlySpec = {
   id: VentureId;
   kicker: string;
@@ -109,23 +111,40 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
   const v = ventures[spec.id];
   return (
     <main id="main">
-      <section className="section pb-12 pt-20 md:pt-24">
+      <section className="pb-10 pt-8 md:pt-10">
         <div className="container">
-          <ArcCrumb active={spec.id} />
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-            <div>
+          <div className="mb-8 flex items-center gap-3">
+            <Link
+              href="/"
+              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+            >
+              KEPTILON
+            </Link>
+            <span className="text-[var(--line)]" aria-hidden>
+              |
+            </span>
+            <span
+              className="font-[family-name:var(--font-fraunces)] text-lg"
+              style={{ color: v.accent }}
+            >
+              {v.name}
+            </span>
+          </div>
+
+          <div className="grid items-stretch overflow-hidden lg:grid-cols-2 lg:rounded-2xl lg:border lg:border-[var(--line)]">
+            <div className="flex flex-col justify-center py-8 lg:px-10 lg:py-14">
               <p
                 className="text-[0.72rem] font-bold uppercase tracking-[0.18em]"
                 style={{ color: v.accent }}
               >
                 {spec.kicker}
               </p>
-              <h1 className="display mt-4 text-[clamp(2rem,4vw,3.2rem)]">{spec.title}</h1>
+              <h1 className="display mt-4 text-[clamp(2rem,4vw,3.1rem)]">{spec.title}</h1>
               <p className="lede mt-6 text-[1.08rem]">{spec.lede}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={v.ctaHref}>{v.cta}</Button>
                 <Button href="/#arc" variant="ghost">
-                  See the Arc
+                  See the Arc →
                 </Button>
               </div>
               {v.statusNote && (
@@ -134,16 +153,20 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
                 </p>
               )}
             </div>
-            <div className="media-frame relative aspect-[4/3]">
+            <div className="relative min-h-[280px] lg:min-h-[420px]">
               <Image
                 src={ventureImages[spec.id]}
                 alt={`${v.name} — ${spec.kicker}`}
                 fill
                 priority
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 48vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
+          </div>
+
+          <div className="mt-8">
+            <ArcCrumb active={spec.id} />
           </div>
         </div>
       </section>

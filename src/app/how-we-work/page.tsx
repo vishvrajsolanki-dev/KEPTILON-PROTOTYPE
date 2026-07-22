@@ -40,66 +40,67 @@ const capabilities = [
 export default function HowWeWorkPage() {
   return (
     <main id="main">
-      <section className="section pb-12 pt-24 md:pt-28">
-        <div className="container grid items-center gap-10 lg:grid-cols-2">
-          <div>
-            <p className="eyebrow">How we work</p>
-            <h1 className="display mt-4 text-[clamp(2.2rem,4.5vw,3.6rem)]">
-              We don&apos;t stop at advice.
-            </h1>
-            <p className="lede mt-6 text-[1.1rem]">
-              Keptilon is a house of operators and guides. Insight matters — the
-              work after it matters more.
-            </p>
-          </div>
-          <div className="media-frame relative aspect-[16/11]">
-            <Image
-              src="/images/visual-operators-guides.jpg"
-              alt="Operators and guides — craft and counsel"
-              fill
-              priority
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 48vw"
-            />
-          </div>
+      <section className="section pb-10 pt-24 md:pt-28">
+        <div className="container mx-auto max-w-2xl text-center">
+          <h1 className="display text-[clamp(2.2rem,4.5vw,3.4rem)]">
+            How Keptilon works
+          </h1>
+          <p className="mt-4 text-[var(--terracotta)]">
+            Two roles. One commitment: better decisions, built to last.
+          </p>
+          <div className="mx-auto mt-4 h-px w-16 bg-[var(--green)]" />
         </div>
       </section>
 
-      <section className="pb-20">
-        <div className="container grid gap-6 md:grid-cols-2">
-          <article
-            className="rounded-2xl border border-[var(--line)] p-8 md:p-10"
-            style={{
-              background:
-                "linear-gradient(160deg, var(--terracotta-soft), var(--bg-elevated))",
-            }}
-          >
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--terracotta)]">
-              Operators
-            </p>
-            <h2 className="display mt-3 text-3xl">Real floors first</h2>
-            <p className="mt-4 text-[var(--ink-2)]">
-              We run systems on our own restaurant floor — The Krater — before
-              we recommend them. If it does not survive a Saturday rush, it does
-              not reach a client.
-            </p>
+      <section className="pb-16">
+        <div className="container relative grid gap-6 md:grid-cols-2 md:gap-8">
+          <article className="relative overflow-hidden rounded-[2.5rem] border border-[var(--line)] md:rounded-[3rem]">
+            <div className="relative aspect-[3/4] min-h-[380px]">
+              <Image
+                src="/images/visual-cofwaf-hero.jpg"
+                alt="Operators"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(28,25,23,0.85)] via-[rgba(28,25,23,0.2)] to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-center text-white">
+                <span className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--green)]">
+                  ⌗
+                </span>
+                <h2 className="display text-3xl">Operators</h2>
+                <p className="mx-auto mt-3 max-w-[28ch] text-sm text-white/85">
+                  We run systems on real floors before we recommend them.
+                </p>
+              </div>
+            </div>
           </article>
-          <article
-            className="rounded-2xl border border-[var(--line)] p-8 md:p-10"
-            style={{
-              background:
-                "linear-gradient(160deg, var(--green-soft), var(--bg-elevated))",
-            }}
-          >
-            <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--green)]">
-              Guides
-            </p>
-            <h2 className="display mt-3 text-3xl">Through the decision</h2>
-            <p className="mt-4 text-[var(--ink-2)]">
-              Readings, plans and mentoring that continue until action is taken —
-              careers chosen, habits changed, companies built.
-            </p>
+          <article className="relative overflow-hidden rounded-[2.5rem] border border-[var(--line)] md:rounded-[3rem]">
+            <div className="relative aspect-[3/4] min-h-[380px]">
+              <Image
+                src="/images/visual-destiny-hero.jpg"
+                alt="Guides"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(28,25,23,0.85)] via-[rgba(28,25,23,0.2)] to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-8 text-center text-white">
+                <span className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--terracotta)]">
+                  ◆
+                </span>
+                <h2 className="display text-3xl">Guides</h2>
+                <p className="mx-auto mt-3 max-w-[28ch] text-sm text-white/85">
+                  We stay until the decision becomes action.
+                </p>
+              </div>
+            </div>
           </article>
+          <p className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--line)] bg-[var(--bg)] px-4 py-2 text-sm font-semibold shadow-[var(--shadow-lift)] md:block">
+            <span className="text-[var(--green)]">Insight</span>
+            <span className="mx-2 text-[var(--terracotta)]">→</span>
+            <span className="text-[var(--terracotta)]">Action</span>
+          </p>
         </div>
       </section>
 

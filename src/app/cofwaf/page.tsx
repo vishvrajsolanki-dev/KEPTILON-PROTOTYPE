@@ -55,45 +55,66 @@ const problems = [
 export default function CofWafPage() {
   return (
     <main id="main">
-      <section className="section pb-16 pt-20 md:pt-24">
+      <section className="pb-10 pt-8 md:pt-10">
         <div className="container">
-          <ArcCrumb active="cofwaf" />
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-            <div>
+          <div className="mb-8 flex items-center gap-3">
+            <Link
+              href="/"
+              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+            >
+              KEPTILON
+            </Link>
+            <span className="text-[var(--line)]" aria-hidden>
+              |
+            </span>
+            <span className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--terracotta)]">
+              CofWaf
+            </span>
+          </div>
+
+          <div className="grid items-stretch overflow-hidden lg:grid-cols-2 lg:rounded-2xl lg:border lg:border-[var(--line)]">
+            <div className="flex flex-col justify-center py-8 lg:px-10 lg:py-14">
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--terracotta)]">
                 Restaurant · Café · QSR Consulting
               </p>
-              <h1 className="display mt-4 text-[clamp(2.3rem,4.4vw,3.6rem)]">
+              <h1 className="display mt-4 text-[clamp(2.4rem,4.5vw,3.6rem)] text-[var(--terracotta)]">
                 Find your missing piece.
               </h1>
-              <p className="lede mt-6 text-[1.1rem]">
-                Every restaurant runs on three things — Profit, Identity and
-                Experience. CofWaf finds the one that has gone missing, then
-                helps you put it back on the plate.
+              <p className="lede mt-6 text-[1.08rem]">
+                CofWaf helps food businesses grow through{" "}
+                <span className="font-semibold text-[var(--terracotta)]">
+                  Profit, Identity, and Experience
+                </span>
+                . Every restaurant is missing one — we find it, then put it back
+                on the plate.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={WHATSAPP_COFWAF} external variant="secondary">
-                  Talk on WhatsApp
+                  Chat on WhatsApp
                 </Button>
                 <Button href="#services" variant="ghost">
-                  See services
+                  See Build Scale Sustain →
                 </Button>
               </div>
-              <p className="mt-4 text-sm text-[var(--ink-3)]">+91 99744 06111 · usually answers same day</p>
+              <p className="mt-4 text-sm text-[var(--ink-3)]">+91 99744 06111</p>
             </div>
-            <div className="media-frame relative aspect-[4/3]">
+            <div className="relative min-h-[300px] lg:min-h-[480px]">
               <Image
                 src="/images/visual-cofwaf-hero.jpg"
-                alt="Vegetarian fine-dining plating — CofWaf culinary craft"
+                alt="Chef plating — CofWaf culinary operations"
                 fill
                 priority
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 48vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
 
-          <ul className="mt-12 flex flex-wrap gap-2">
+          <div className="mt-8">
+            <ArcCrumb active="cofwaf" />
+          </div>
+
+          <ul className="mt-6 flex flex-wrap gap-2">
             {cofwafExtras.chips.map((c) => (
               <li key={c} className="chip">
                 {c}
