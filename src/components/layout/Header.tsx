@@ -68,7 +68,9 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={`relative hidden py-2 text-[0.78rem] font-medium tracking-wide text-[var(--ink-2)] transition-colors hover:text-[var(--ink)] xl:inline ${
-                pathname === link.href ? "text-[var(--ink)]" : ""
+                pathname === link.href
+                  ? "text-[var(--ink)] after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-[var(--green)]"
+                  : ""
               }`}
             >
               {link.label}

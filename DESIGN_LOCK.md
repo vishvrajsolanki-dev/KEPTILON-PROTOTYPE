@@ -261,7 +261,13 @@ Spotlight cursor · magnetic buttons · 3D tilt spam · starfield hero · scroll
 **Operators line:** We run ventures and build what endures.  
 **Guides line:** We bring perspective, challenge, and clarity.  
 
-### About `/about`
+### About `/about` (elevation approved)
+1. Soft terracotta/green washes · green H1 · locked house story lede  
+2. Hero image as full visual plane (classical colonnade) — not floated media card  
+3. Vision / Mission as editorial columns with hairline + ✦ labels — no white panels  
+4. Brand architecture: “One house. Five independent doors.” as Arc stepping door links with accent dots (not a 5-card grid)  
+5. What we are / aren’t as editorial lists · legal entity · Contact CTA  
+
 Story · Vision/Mission · Brand architecture (five doors) · What we are/aren’t · Legal entity · Contact CTA  
 
 ### Contact `/contact`
@@ -316,4 +322,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** Home elevation v2 exact mockup + How We Work elevation + Font Option B
+**Last locked:** About elevation + Home v2 + How We Work elevation + Font Option B
