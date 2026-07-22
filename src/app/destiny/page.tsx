@@ -46,7 +46,7 @@ export default function DestinyPage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="#enroll">Begin your reading</Button>
                 <Button href="/#arc" variant="ghost">
-                  Back to the Arc →
+                  Back to the Arc
                 </Button>
               </div>
             </div>

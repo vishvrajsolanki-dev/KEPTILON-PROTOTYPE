@@ -144,7 +144,7 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href={v.ctaHref}>{v.cta}</Button>
                 <Button href="/#arc" variant="ghost">
-                  See the Arc →
+                  See the Arc
                 </Button>
               </div>
               {v.statusNote && (

@@ -93,7 +93,7 @@ export default function CofWafPage() {
                   Chat on WhatsApp
                 </Button>
                 <Button href="#services" variant="ghost">
-                  See Build Scale Sustain →
+                  See Build Scale Sustain
                 </Button>
               </div>
               <p className="mt-4 text-sm text-[var(--ink-3)]">+91 99744 06111</p>

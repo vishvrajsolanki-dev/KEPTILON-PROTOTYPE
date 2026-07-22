@@ -74,7 +74,7 @@ export function OperatorsTeaser() {
           </p>
           <div className="mt-8">
             <Button href="/how-we-work" variant="ghost">
-              See how we work →
+              See how we work
             </Button>
           </div>
         </div>
