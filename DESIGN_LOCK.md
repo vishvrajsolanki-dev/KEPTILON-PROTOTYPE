@@ -286,9 +286,13 @@ Prompt · Stage/venture selector · Form · Email alt · WhatsApp path if CofWaf
 - Build / Scale / Sustain as editorial timeline (not three big cards)  
 - Kitchen · à la carte tickets · Krater stats · why ledger · Shubh · final WhatsApp · mobile sticky  
 
-### Destiny `/destiny`
-- Branch mark · split hero · Arc crumb Self  
-- Two branches · 4 steps · Elsewhere ledger · Ethos · Enrollment  
+### Destiny `/destiny` (elevation approved)
+- Soft gold/green washes · branch mark `KEPTILON | Destiny`  
+- Split hero: gold H1 · open visual plane with soft edge fade (no bordered card)  
+- Quiet Arc crumb · Self active  
+- Two branches as editorial split with divider (not panels)  
+- Four steps as connected timeline · elsewhere as hairline rows  
+- Enrollment + ethos as editorial aside  
 
 ### Academy / TalentX / Venture
 Shared skeleton: branch mark · split hero · Arc crumb · offerings · 3 steps · why ledger · ethos · waitlist/talk + stage note · Back to Arc  
@@ -329,4 +333,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** CofWaf elevation + Contact + About + Home v2 + How We Work + Font B
+**Last locked:** Destiny elevation + CofWaf + Contact + About + Home v2 + How We Work + Font B
