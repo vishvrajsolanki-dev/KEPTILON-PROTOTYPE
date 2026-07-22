@@ -308,27 +308,129 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
       </section>
 
       {spec.id === "talentx" && (
-        <section className="pb-4">
-          <div className="container flex flex-wrap gap-3">
-            <Button href="/contact?venture=talentx&role=employer" variant="secondary">
-              I&apos;m hiring
-            </Button>
-            <Button href="/contact?venture=talentx&role=candidate" variant="ghost">
-              I&apos;m a candidate
-            </Button>
+        <section className="border-t border-[var(--line)] py-12 md:py-14">
+          <div className="container">
+            <p
+              className="text-center text-[0.72rem] font-bold uppercase tracking-[0.18em]"
+              style={{ color: v.accent }}
+            >
+              Choose your door
+            </p>
+            <div className="relative mt-8 grid gap-10 md:grid-cols-2 md:gap-16">
+              <div
+                className="pointer-events-none absolute left-1/2 top-4 bottom-4 hidden w-px -translate-x-1/2 bg-[var(--line)] md:block"
+                aria-hidden
+              />
+              <span
+                className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full md:block"
+                style={{ background: v.accent }}
+                aria-hidden
+              />
+              <Link
+                href="/contact?venture=talentx&role=employer"
+                className="group text-center md:text-left"
+              >
+                <p
+                  className="text-[0.72rem] font-bold uppercase tracking-[0.16em]"
+                  style={{ color: v.accent }}
+                >
+                  Employer
+                </p>
+                <h3 className="display mt-3 text-2xl transition group-hover:translate-x-1">
+                  I&apos;m hiring
+                </h3>
+                <p className="mt-2 text-sm text-[var(--ink-2)]">
+                  Capability measured, then matched — before the résumé decides.
+                </p>
+                <span
+                  className="mt-4 inline-block text-sm font-bold"
+                  style={{ color: v.accent }}
+                >
+                  Talk to TalentX →
+                </span>
+              </Link>
+              <Link
+                href="/contact?venture=talentx&role=candidate"
+                className="group text-center md:text-left"
+              >
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[var(--green)]">
+                  Candidate
+                </p>
+                <h3 className="display mt-3 text-2xl transition group-hover:translate-x-1">
+                  I&apos;m a candidate
+                </h3>
+                <p className="mt-2 text-sm text-[var(--ink-2)]">
+                  Show what you can do — not only where you have been.
+                </p>
+                <span className="mt-4 inline-block text-sm font-bold text-[var(--green)]">
+                  Talk to TalentX →
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       )}
 
       {spec.id === "venture" && (
-        <section className="pb-4">
-          <div className="container flex flex-wrap gap-3">
-            <Button href="/contact?venture=venture&role=founder" variant="secondary">
-              I&apos;m a founder
-            </Button>
-            <Button href="/contact?venture=venture&role=investor" variant="ghost">
-              I&apos;m an investor
-            </Button>
+        <section className="border-t border-[var(--line)] py-12 md:py-14">
+          <div className="container">
+            <p
+              className="text-center text-[0.72rem] font-bold uppercase tracking-[0.18em]"
+              style={{ color: v.accent }}
+            >
+              Choose your door
+            </p>
+            <div className="relative mt-8 grid gap-10 md:grid-cols-2 md:gap-16">
+              <div
+                className="pointer-events-none absolute left-1/2 top-4 bottom-4 hidden w-px -translate-x-1/2 bg-[var(--line)] md:block"
+                aria-hidden
+              />
+              <span
+                className="pointer-events-none absolute left-1/2 top-1/2 z-[1] hidden h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full md:block"
+                style={{ background: v.accent }}
+                aria-hidden
+              />
+              <Link
+                href="/contact?venture=venture&role=founder"
+                className="group text-center md:text-left"
+              >
+                <p
+                  className="text-[0.72rem] font-bold uppercase tracking-[0.16em]"
+                  style={{ color: v.accent }}
+                >
+                  Founder
+                </p>
+                <h3 className="display mt-3 text-2xl transition group-hover:translate-x-1">
+                  I&apos;m a founder
+                </h3>
+                <p className="mt-2 text-sm text-[var(--ink-2)]">
+                  Direction first — then the room that funds it.
+                </p>
+                <span
+                  className="mt-4 inline-block text-sm font-bold"
+                  style={{ color: v.accent }}
+                >
+                  Talk to Venture →
+                </span>
+              </Link>
+              <Link
+                href="/contact?venture=venture&role=investor"
+                className="group text-center md:text-left"
+              >
+                <p className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-[var(--green)]">
+                  Investor
+                </p>
+                <h3 className="display mt-3 text-2xl transition group-hover:translate-x-1">
+                  I&apos;m an investor
+                </h3>
+                <p className="mt-2 text-sm text-[var(--ink-2)]">
+                  Companies pressure-tested before capital arrives.
+                </p>
+                <span className="mt-4 inline-block text-sm font-bold text-[var(--green)]">
+                  Talk to Venture →
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       )}

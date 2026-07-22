@@ -334,4 +334,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** Academy elevation (photo + layout) + Destiny + CofWaf + Contact + About + Home v2 + How We Work + Font B
+**Last locked:** TalentX elevation (photo + doors) + Academy + Destiny + CofWaf + Contact + About + Home v2 + How We Work + Font B
