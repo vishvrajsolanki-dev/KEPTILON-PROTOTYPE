@@ -125,13 +125,15 @@ Container horizontal padding: `24` mobile / `32` desktop
 /terms            Terms
 ```
 
-### Navigation (Quiet Bar + Ventures dropdown)
+### Navigation (Quiet Bar + ventures inline) — updated by explicit request
 - Left: `KEPTILON` serif wordmark
-- Center/right links: The Arc · How We Work · About · Ventures ▾
+- Center: Destiny · Academy · TalentX · CofWaf · Venture (accent dots, direct links)
+- Utility (xl+): The Arc · How We Work · About
 - Far right: primary pill CTA `Start where you are`
 - Theme toggle A↔C allowed (System C)
 - Sticky, parchment blur nav, hairline bottom border
 - Height ~72px
+- Mobile: hamburger lists ventures first, then house links
 
 ### Page width / grid
 - Max container 1180px
