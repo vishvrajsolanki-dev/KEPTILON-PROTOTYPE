@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ArcCrumb } from "@/components/ventures/ArcCrumb";
+import { ventureImages } from "@/data/content";
 import { ventures, type VentureId } from "@/data/ventures";
 
 type EarlySpec = {
@@ -108,24 +110,41 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
   return (
     <main id="main">
       <section className="section pb-12 pt-20 md:pt-24">
-        <div className="container max-w-3xl">
+        <div className="container">
           <ArcCrumb active={spec.id} />
-          <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em]" style={{ color: v.accent }}>
-            {spec.kicker}
-          </p>
-          <h1 className="display mt-4 text-[clamp(2rem,4vw,3.2rem)]">{spec.title}</h1>
-          <p className="lede mt-6">{spec.lede}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={v.ctaHref}>{v.cta}</Button>
-            <Button href="/#arc" variant="ghost">
-              See the Arc
-            </Button>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <p
+                className="text-[0.72rem] font-bold uppercase tracking-[0.18em]"
+                style={{ color: v.accent }}
+              >
+                {spec.kicker}
+              </p>
+              <h1 className="display mt-4 text-[clamp(2rem,4vw,3.2rem)]">{spec.title}</h1>
+              <p className="lede mt-6 text-[1.08rem]">{spec.lede}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href={v.ctaHref}>{v.cta}</Button>
+                <Button href="/#arc" variant="ghost">
+                  See the Arc
+                </Button>
+              </div>
+              {v.statusNote && (
+                <p className="mt-6 inline-block rounded-full border border-dashed border-[var(--line)] px-4 py-2 text-xs font-semibold tracking-wide text-[var(--ink-3)]">
+                  {v.statusNote}
+                </p>
+              )}
+            </div>
+            <div className="media-frame relative aspect-[4/3]">
+              <Image
+                src={ventureImages[spec.id]}
+                alt={`${v.name} — ${spec.kicker}`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+              />
+            </div>
           </div>
-          {v.statusNote && (
-            <p className="mt-6 inline-block rounded-full border border-dashed border-[var(--line)] px-4 py-2 text-xs font-semibold tracking-wide text-[var(--ink-3)]">
-              {v.statusNote}
-            </p>
-          )}
         </div>
       </section>
 
