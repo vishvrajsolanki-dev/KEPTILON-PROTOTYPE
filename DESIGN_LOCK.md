@@ -278,11 +278,13 @@ Story · Vision/Mission · Brand architecture (five doors) · What we are/aren�
 5. Quiet Arc routing cue under form (Self→Capital doors)  
 Prompt · Stage/venture selector · Form · Email alt · WhatsApp path if CofWaf  
 
-### CofWaf `/cofwaf`
-- Branch mark: `KEPTILON | CofWaf`  
-- Split hero: terracotta H1 “Find your missing piece.” · WhatsApp + See Build Scale Sustain  
-- Arc crumb with Business active  
-- Chips · Kitchen POV · Build/Scale/Sustain · Problem tickets · Krater · Why ledger · Shubh Aarambh · Final WhatsApp · Mobile sticky  
+### CofWaf `/cofwaf` (elevation approved)
+- Soft terracotta atmosphere · branch mark `KEPTILON | CofWaf`  
+- Split hero: terracotta H1 · WhatsApp (terracotta fill) + See Build · Scale · Sustain  
+- Hero image as full visual plane with soft edge fade — not bordered floating card  
+- Quiet Arc crumb (Business active) · service chips as pills  
+- Build / Scale / Sustain as editorial timeline (not three big cards)  
+- Kitchen · à la carte tickets · Krater stats · why ledger · Shubh · final WhatsApp · mobile sticky  
 
 ### Destiny `/destiny`
 - Branch mark · split hero · Arc crumb Self  
@@ -327,4 +329,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** Contact elevation + About + Home v2 + How We Work + Font B
+**Last locked:** CofWaf elevation + Contact + About + Home v2 + How We Work + Font B

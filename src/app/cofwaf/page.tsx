@@ -52,15 +52,33 @@ const problems = [
   { quote: "I need funding and my numbers are a mess.", title: "Investor and pitch support" },
 ];
 
+/** CofWaf elevation — exact approved mockup direction */
 export default function CofWafPage() {
   return (
     <main id="main">
-      <section className="pb-10 pt-8 md:pt-10">
-        <div className="container">
+      <section className="relative overflow-hidden pb-8 pt-8 md:pt-10">
+        <div
+          className="pointer-events-none absolute -right-24 top-0 h-[480px] w-[480px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in srgb, var(--terracotta) 12%, transparent) 0%, transparent 68%)",
+          }}
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute -left-20 bottom-0 h-[360px] w-[360px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in srgb, var(--green) 7%, transparent) 0%, transparent 70%)",
+          }}
+          aria-hidden
+        />
+
+        <div className="container relative">
           <div className="mb-8 flex items-center gap-3">
             <Link
               href="/"
-              className="font-[family-name:var(--font-cormorant)] text-sm tracking-[0.12em] text-[var(--ink)]"
+              className="font-[family-name:var(--font-cormorant)] text-sm tracking-[0.12em] text-[var(--green)]"
             >
               KEPTILON
             </Link>
@@ -72,12 +90,13 @@ export default function CofWafPage() {
             </span>
           </div>
 
-          <div className="grid items-stretch overflow-hidden lg:grid-cols-2 lg:rounded-2xl lg:border lg:border-[var(--line)]">
-            <div className="flex flex-col justify-center py-8 lg:px-10 lg:py-14">
+          {/* Hero — open composition, image as visual plane */}
+          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8">
+            <div className="max-w-xl py-2 lg:py-8">
               <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[var(--terracotta)]">
                 Restaurant · Café · QSR Consulting
               </p>
-              <h1 className="display mt-4 text-[clamp(2.4rem,4.5vw,3.6rem)] text-[var(--terracotta)]">
+              <h1 className="display mt-4 text-[clamp(2.5rem,4.6vw,3.7rem)] text-[var(--terracotta)]">
                 Find your missing piece.
               </h1>
               <p className="lede mt-6 text-[1.08rem]">
@@ -89,16 +108,22 @@ export default function CofWafPage() {
                 on the plate.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href={WHATSAPP_COFWAF} external variant="secondary">
-                  Chat on WhatsApp
+                <Button
+                  href={WHATSAPP_COFWAF}
+                  external
+                  className="!bg-[var(--terracotta)] !text-[#faf7f2] hover:!bg-[color-mix(in_srgb,var(--terracotta)_88%,black)]"
+                  showArrow={false}
+                >
+                  Talk on WhatsApp
                 </Button>
-                <Button href="#services" variant="ghost">
-                  See Build Scale Sustain
+                <Button href="#services" variant="secondary">
+                  See Build · Scale · Sustain
                 </Button>
               </div>
               <p className="mt-4 text-sm text-[var(--ink-3)]">+91 99744 06111</p>
             </div>
-            <div className="relative min-h-[300px] lg:min-h-[480px]">
+
+            <div className="relative aspect-[5/4] min-h-[280px] w-full overflow-hidden lg:min-h-[460px]">
               <Image
                 src="/images/visual-cofwaf-hero.jpg"
                 alt="Chef plating — CofWaf culinary operations"
@@ -107,16 +132,23 @@ export default function CofWafPage() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              <div
+                className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--bg)] to-transparent md:w-24"
+                aria-hidden
+              />
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-10">
             <ArcCrumb active="cofwaf" />
           </div>
 
-          <ul className="mt-6 flex flex-wrap gap-2">
+          <ul className="mt-2 flex flex-wrap gap-2">
             {cofwafExtras.chips.map((c) => (
-              <li key={c} className="chip">
+              <li
+                key={c}
+                className="rounded-full border border-[var(--line)] bg-[var(--bg)] px-3.5 py-1.5 text-[0.78rem] font-semibold text-[var(--ink-2)]"
+              >
                 {c}
               </li>
             ))}
@@ -130,7 +162,7 @@ export default function CofWafPage() {
             <p className="eyebrow" style={{ color: "var(--terracotta)" }}>
               The kitchen
             </p>
-            <h2 className="display mt-4 text-[clamp(1.9rem,3.2vw,2.7rem)]">
+            <h2 className="display mt-4 text-[clamp(1.9rem,3.2vw,2.7rem)] text-[var(--terracotta)]">
               {cofwafExtras.kitchen.title}
             </h2>
             <p className="lede mt-4">{cofwafExtras.kitchen.body}</p>
@@ -143,7 +175,7 @@ export default function CofWafPage() {
               ))}
             </ul>
           </div>
-          <div className="media-frame relative aspect-[5/4]">
+          <div className="relative aspect-[5/4] overflow-hidden">
             <Image
               src="/images/visual-operators-guides.jpg"
               alt="Kitchen operations atmosphere"
@@ -155,38 +187,50 @@ export default function CofWafPage() {
         </div>
       </section>
 
+      {/* Build · Scale · Sustain — editorial timeline, not three cards */}
       <section id="services" className="section scroll-mt-24">
         <div className="container">
           <p className="eyebrow" style={{ color: "var(--terracotta)" }}>
             The menu
           </p>
-          <h2 className="display mt-4 text-[clamp(1.9rem,3.4vw,2.8rem)]">
+          <h2 className="display mt-4 text-[clamp(1.9rem,3.4vw,2.8rem)] text-[var(--terracotta)]">
             Build. Scale. Sustain.
           </h2>
           <p className="lede mt-4">
             Three courses, in the order they are served. Each WhatsApp button
             opens with that enquiry already written.
           </p>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            {courses.map((c, i) => (
-              <article key={c.title} className="panel flex flex-col p-6 md:p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--ink-3)]">
-                  {c.label}
-                </p>
-                <p className="display mt-2 text-5xl text-[color-mix(in_srgb,var(--terracotta)_35%,transparent)]">
-                  {i + 1}
-                </p>
-                <h3 className="display -mt-4 text-3xl">{c.title}</h3>
-                <p className="mt-4 flex-1 text-[var(--ink-2)]">{c.body}</p>
-                <p className="mt-4 text-sm text-[var(--ink-3)]">{c.for}</p>
-                <div className="mt-6">
-                  <Button href={wa(c.title)} external variant="secondary" className="w-full">
-                    Ask about {c.title}
-                  </Button>
-                </div>
-              </article>
-            ))}
-          </div>
+
+          <ol className="relative mt-14">
+            <div
+              className="pointer-events-none absolute left-[8%] right-[8%] top-[14px] hidden h-px bg-[var(--terracotta)] opacity-40 lg:block"
+              aria-hidden
+            />
+            <div className="grid gap-10 lg:grid-cols-3 lg:gap-8">
+              {courses.map((c, i) => (
+                <li key={c.title} className="relative">
+                  <div className="flex items-center gap-3">
+                    <span className="relative z-[1] flex h-7 w-7 items-center justify-center rounded-full border border-[var(--terracotta)] bg-[var(--bg)] text-[0.7rem] font-bold text-[var(--terracotta)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--ink-3)]">
+                      {c.label}
+                    </span>
+                  </div>
+                  <h3 className="display mt-4 text-3xl text-[var(--terracotta)]">
+                    {c.title}
+                  </h3>
+                  <p className="mt-3 text-[var(--ink-2)]">{c.body}</p>
+                  <p className="mt-3 text-sm text-[var(--ink-3)]">{c.for}</p>
+                  <div className="mt-6">
+                    <Button href={wa(c.title)} external variant="secondary">
+                      Ask about {c.title}
+                    </Button>
+                  </div>
+                </li>
+              ))}
+            </div>
+          </ol>
         </div>
       </section>
 
@@ -205,14 +249,16 @@ export default function CofWafPage() {
                   href={wa(p.title)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] p-5 transition hover:border-[var(--terracotta)] hover:shadow-[var(--shadow-lift)]"
+                  className="group block border-b border-[var(--line)] py-5 transition hover:border-[var(--terracotta)] md:border md:border-[var(--line)] md:rounded-xl md:bg-[var(--bg)] md:px-5 md:py-5"
                 >
                   <p className="font-[family-name:var(--font-cormorant)] text-lg italic text-[var(--ink)]">
                     “{p.quote}”
                   </p>
                   <p className="mt-3 text-sm font-bold text-[var(--terracotta)]">
                     {p.title}{" "}
-                    <span className="inline-block transition group-hover:translate-x-1">→</span>
+                    <span className="inline-block transition group-hover:translate-x-1">
+                      →
+                    </span>
                   </p>
                 </a>
               </li>
@@ -227,7 +273,9 @@ export default function CofWafPage() {
             <p className="eyebrow" style={{ color: "var(--terracotta)" }}>
               Case study
             </p>
-            <h2 className="display mt-4 text-[clamp(1.9rem,3vw,2.8rem)]">The Krater</h2>
+            <h2 className="display mt-4 text-[clamp(1.9rem,3vw,2.8rem)] text-[var(--terracotta)]">
+              The Krater
+            </h2>
             <p className="lede mt-4">
               Our own floor. Every system we recommend — SOPs, review discipline,
               Instagram cadence — runs at The Krater first. If it does not
@@ -241,20 +289,28 @@ export default function CofWafPage() {
               </footer>
             </blockquote>
             <div className="mt-8">
-              <Button href={wa("The Krater systems for my restaurant")} external variant="secondary">
+              <Button
+                href={wa("The Krater systems for my restaurant")}
+                external
+                variant="secondary"
+              >
                 Ask for this in my restaurant
               </Button>
             </div>
           </div>
-          <dl className="grid grid-cols-3 gap-3">
+          <dl className="grid grid-cols-3 gap-6 border-y border-[var(--line)] py-6">
             {[
               { v: "3.2×", l: "Instagram engagement growth" },
               { v: "4.5★", l: "Google rating maintained" },
               { v: "24h", l: "Every review answered within" },
             ].map((s) => (
-              <div key={s.l} className="panel p-4 text-center md:p-6">
-                <dt className="display text-3xl text-[var(--terracotta)] md:text-4xl">{s.v}</dt>
-                <dd className="mt-2 text-xs leading-snug text-[var(--ink-3)]">{s.l}</dd>
+              <div key={s.l} className="text-center">
+                <dt className="display text-3xl text-[var(--terracotta)] md:text-4xl">
+                  {s.v}
+                </dt>
+                <dd className="mt-2 text-xs leading-snug text-[var(--ink-3)]">
+                  {s.l}
+                </dd>
               </div>
             ))}
           </dl>
@@ -269,11 +325,11 @@ export default function CofWafPage() {
           <h2 className="display mt-4 max-w-[20ch] text-[clamp(1.8rem,3vw,2.5rem)]">
             Most consultants leave a deck. We leave a kitchen that runs.
           </h2>
-          <div className="mt-10 overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)]">
+          <div className="mt-10">
             {cofwafExtras.elsewhere.map(([from, to]) => (
               <div
                 key={from}
-                className="grid gap-3 border-b border-[var(--line)] p-5 last:border-b-0 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6 md:p-6"
+                className="grid gap-3 border-b border-[var(--line)] py-5 last:border-b-0 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6"
               >
                 <div>
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--ink-3)]">
@@ -299,14 +355,16 @@ export default function CofWafPage() {
           <p className="eyebrow" style={{ color: "var(--terracotta)" }}>
             Signature add-on
           </p>
-          <h2 className="display mt-4 text-[clamp(1.8rem,3vw,2.5rem)]">Shubh Aarambh</h2>
+          <h2 className="display mt-4 text-[clamp(1.8rem,3vw,2.5rem)] text-[var(--terracotta)]">
+            Shubh Aarambh
+          </h2>
           <p className="lede mt-4">
             Once the operations are right, we also help you get the timing right —
             optional, always after the operational work.
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {cofwafExtras.shubh.map((s) => (
-              <article key={s.title} className="panel p-5">
+              <article key={s.title} className="border-t border-[var(--terracotta)] pt-4">
                 <h3 className="display text-xl">{s.title}</h3>
                 <p className="mt-2 text-sm text-[var(--ink-2)]">{s.body}</p>
               </article>
@@ -322,7 +380,7 @@ export default function CofWafPage() {
 
       <section className="section border-t border-[var(--line)] bg-[var(--bg-soft)] text-center">
         <div className="container max-w-3xl">
-          <h2 className="display text-[clamp(1.9rem,3.4vw,2.8rem)]">
+          <h2 className="display text-[clamp(1.9rem,3.4vw,2.8rem)] text-[var(--terracotta)]">
             Tell us about your restaurant.
           </h2>
           <p className="lede mx-auto mt-4">
@@ -330,7 +388,12 @@ export default function CofWafPage() {
             already written — edit it, then send.
           </p>
           <div className="mt-8">
-            <Button href={WHATSAPP_COFWAF} external variant="secondary">
+            <Button
+              href={WHATSAPP_COFWAF}
+              external
+              className="!bg-[var(--terracotta)] !text-[#faf7f2] hover:!bg-[color-mix(in_srgb,var(--terracotta)_88%,black)]"
+              showArrow={false}
+            >
               Tell us about your restaurant
             </Button>
           </div>
@@ -343,7 +406,12 @@ export default function CofWafPage() {
       </section>
 
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--nav-bg)] p-3 backdrop-blur-md md:hidden pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-        <Button href={WHATSAPP_COFWAF} external variant="secondary" className="w-full">
+        <Button
+          href={WHATSAPP_COFWAF}
+          external
+          className="w-full !bg-[var(--terracotta)] !text-[#faf7f2]"
+          showArrow={false}
+        >
           Chat on WhatsApp · +91 99744 06111
         </Button>
       </div>

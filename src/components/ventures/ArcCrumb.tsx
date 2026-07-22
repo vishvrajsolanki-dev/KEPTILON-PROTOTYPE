@@ -3,13 +3,11 @@ import { StageIcon } from "@/components/ui/StageIcon";
 import { arcStages } from "@/data/arc";
 import type { VentureId } from "@/data/ventures";
 
+/** Quiet Arc crumb — elevation (no elevated card chrome) */
 export function ArcCrumb({ active }: { active: VentureId }) {
   return (
-    <nav
-      aria-label="Arc position"
-      className="mb-10 rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-4 shadow-[var(--shadow-soft)] md:px-6"
-    >
-      <ol className="flex items-center justify-between gap-1">
+    <nav aria-label="Arc position" className="mb-8 md:mb-10">
+      <ol className="flex items-center justify-between gap-1 border-y border-[var(--line)] py-4">
         {arcStages.map((v) => {
           const isActive = v.id === active;
           return (
@@ -21,7 +19,7 @@ export function ArcCrumb({ active }: { active: VentureId }) {
               >
                 <span
                   className={`flex h-9 w-9 items-center justify-center rounded-full border transition md:h-10 md:w-10 ${
-                    isActive ? "text-white" : "bg-[var(--bg)]"
+                    isActive ? "text-white shadow-[var(--shadow-soft)]" : "bg-[var(--bg)]"
                   }`}
                   style={{
                     borderColor: v.accent,
