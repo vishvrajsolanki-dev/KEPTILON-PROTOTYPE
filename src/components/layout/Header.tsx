@@ -29,7 +29,7 @@ export function Header() {
       <div className="container flex h-[72px] items-center justify-between gap-3 xl:gap-4">
         <Link
           href="/"
-          className="shrink-0 font-[family-name:var(--font-cormorant)] text-[1.2rem] font-semibold tracking-[0.12em] text-[var(--ink)] xl:text-[1.28rem]"
+          className="shrink-0 font-[family-name:var(--font-cormorant)] text-[1.2rem] font-semibold tracking-[0.12em] text-[var(--green)] xl:text-[1.28rem]"
           aria-label="Keptilon home"
         >
           KEPTILON

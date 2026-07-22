@@ -32,7 +32,7 @@ export function OperatorsTeaser() {
                 </span>
                 <h3 className="display text-3xl">Operators</h3>
                 <p className="mx-auto mt-3 max-w-[28ch] text-sm text-white/85">
-                  We run systems on real floors before we recommend them.
+                  We run ventures and build what endures.
                 </p>
               </div>
             </div>
@@ -54,7 +54,7 @@ export function OperatorsTeaser() {
                 </span>
                 <h3 className="display text-3xl">Guides</h3>
                 <p className="mx-auto mt-3 max-w-[28ch] text-sm text-white/85">
-                  We stay until the decision becomes action.
+                  We bring perspective, challenge, and clarity.
                 </p>
               </div>
             </div>

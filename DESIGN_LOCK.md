@@ -234,23 +234,32 @@ Spotlight cursor · magnetic buttons · 3D tilt spam · starfield hero · scroll
 7. Final CTA  
 8. Footer Arc mini-map  
 
-**Hero content (exact — elevation v2 approved):**
-- No eyebrow in first viewport (brand carried by wordmark + H1)
-- H1: One house for the whole arc.  
+**Hero content (exact — elevation v2 approved mockup):**
+- No eyebrow in first viewport (brand carried by green wordmark + green H1)
+- H1: One house for the whole arc. (forest green Cormorant)
 - Lede: Guidance that does not stop at advice — for people, professionals, founders and businesses.  
 - Primary CTA: Start where you are  
-- Secondary CTA: Explore how we work  
-- Atmosphere: soft green + terracotta radial washes; larger classical house vignette bottom-left  
-- Arc nodes (L→R): Self · Skill · Team · Business · Capital with locked blurbs; stronger hover lift  
-- Closing line: One house. Every stage. Real support.  
+- Secondary CTA: Explore how we work (terracotta outline)  
+- Atmosphere: soft green + terracotta radial washes; classical house vignette (columns, staircase, cypress) bottom-left  
+- Arc: ascending terracotta path; classical fine-line icons (bust / column / people / facade / tree)
+- Stage labels in terracotta serif; blurbs:
+  - Self: Clarity over who you are and where you're going.
+  - Skill: Build the capability that compounds.
+  - Team: Find, align and grow with the right people.
+  - Business: Create systems that deliver value and endure.
+  - Capital: Access the resources that unlock scale.
+- Closing house mark + italic: One house. Every stage. Real support.  
 - **No stats in hero**
 
-### How We Work `/how-we-work`
-1. Centered title “How Keptilon works” + terracotta support line  
-2. Tall Operators | Guides split + Insight → Action  
-3. Method Clarify → Choose → Act → Stay  
-4. Capabilities secondary chips/cards  
+### How We Work `/how-we-work` (elevation approved)
+1. Soft green/terracotta washes · centered green title · terracotta serif support · hairline  
+2. Tall Operators | Guides split — photo top + solid color band bottom (green / terracotta) · Insight → Action pill  
+3. Method as connected timeline (not four cards): Clarify → Choose → Act → Stay  
+4. Capabilities as quiet chips/list (AI behind the curtain)  
 5. Dual CTA: Talk to Keptilon · Start where you are  
+
+**Operators line:** We run ventures and build what endures.  
+**Guides line:** We bring perspective, challenge, and clarity.  
 
 ### About `/about`
 Story · Vision/Mission · Brand architecture (five doors) · What we are/aren’t · Legal entity · Contact CTA  
@@ -307,4 +316,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** Home elevation v2 + Font Option B (Cormorant Garamond + Outfit)
+**Last locked:** Home elevation v2 exact mockup + How We Work elevation + Font Option B
