@@ -64,12 +64,12 @@
 ### Typography
 | Role | Spec |
 |------|------|
-| Display | Fraunces (optical serif) — headlines, wordmark, stage names, quotes |
-| UI / Body | Manrope — nav, body, buttons |
-| Eyebrow | Manrope 0.72rem, weight 700, tracking ~0.18em, uppercase, green |
-| H1 | `clamp(2.8rem, 5.5vw, 4.4rem)`, line-height ~1.12, tracking -0.03em |
+| Display | Cormorant Garamond — headlines, wordmark, stage names, quotes |
+| UI / Body | Outfit — nav, body, buttons |
+| Eyebrow | Outfit 0.72rem, weight 700, tracking ~0.18em, uppercase, green |
+| H1 | `clamp(2.9rem, 5.6vw, 4.5rem)`, weight 600, line-height ~1.12, tracking -0.02em |
 | Body | ~1.05–1.125rem / 1.7 |
-| Forbidden as brand voice | Inter, Roboto, Arial, system-ui as primary |
+| Forbidden as brand voice | Inter, Roboto, Arial, system-ui as primary; Fraunces/Manrope retired (Option B approved) |
 
 ### Spacing scale
 `4 · 8 · 16 · 24 · 40 · 64 · 104 · 160`  
@@ -95,13 +95,13 @@ Container horizontal padding: `24` mobile / `32` desktop
 
 ### Texture / atmosphere
 - Parchment grain ~2–3% opacity overlay
-- Optional soft radial wash green 4% / terracotta 3%
+- Soft radial wash green ~8–9% / terracotta ~8% behind Home hero (approved elevation)
 - Forbidden: purple nebula, gold metallic glare, starfield hero
 
 ### Icon / illustration style
 - Thin stroke line icons (~1.5–2px)
 - Arc stage icons: Self / Skill / Team / Business / Capital
-- Home hero (mockup 43-01): optional classical house/landscape vignette bottom-left — fine-line / wash, not photo collage
+- Home hero: classical house vignette bottom-left — fine-line / wash, atmospheric scale (not a tiny stamp)
 - Venture pages: documentary craft photography allowed
 - Forbidden: emoji chrome, neon zodiac, AI-robot stock
 
@@ -234,13 +234,14 @@ Spotlight cursor · magnetic buttons · 3D tilt spam · starfield hero · scroll
 7. Final CTA  
 8. Footer Arc mini-map  
 
-**Hero content (exact):**
-- Eyebrow: Keptilon Universe  
+**Hero content (exact — elevation v2 approved):**
+- No eyebrow in first viewport (brand carried by wordmark + H1)
 - H1: One house for the whole arc.  
 - Lede: Guidance that does not stop at advice — for people, professionals, founders and businesses.  
 - Primary CTA: Start where you are  
 - Secondary CTA: Explore how we work  
-- Arc nodes (L→R): Self · Skill · Team · Business · Capital with locked blurbs  
+- Atmosphere: soft green + terracotta radial washes; larger classical house vignette bottom-left  
+- Arc nodes (L→R): Self · Skill · Team · Business · Capital with locked blurbs; stronger hover lift  
 - Closing line: One house. Every stage. Real support.  
 - **No stats in hero**
 
@@ -306,4 +307,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** Phase 9 prototype approval + Design Lock Protocol acceptance
+**Last locked:** Home elevation v2 + Font Option B (Cormorant Garamond + Outfit)

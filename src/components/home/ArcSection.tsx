@@ -52,7 +52,7 @@ export function ArcSection() {
                   className="group flex h-full flex-col items-center px-2 text-center"
                 >
                   <motion.span
-                    className="mb-3 font-[family-name:var(--font-fraunces)] text-[0.95rem] italic leading-snug"
+                    className="mb-3 font-[family-name:var(--font-cormorant)] text-[0.95rem] italic leading-snug"
                     style={{ color: stage.accent }}
                     initial={reduce ? false : { opacity: 0, y: 8 }}
                     animate={
@@ -114,7 +114,7 @@ export function ArcSection() {
                     />
                     {stage.who}
                   </span>
-                  <span className="font-[family-name:var(--font-fraunces)] text-[clamp(1.3rem,2.4vw,1.85rem)] italic text-[var(--ink)] transition duration-300 group-hover:translate-x-2">
+                  <span className="font-[family-name:var(--font-cormorant)] text-[clamp(1.3rem,2.4vw,1.85rem)] italic text-[var(--ink)] transition duration-300 group-hover:translate-x-2">
                     “{stage.desire.replace(/\.$/, "")}”
                   </span>
                   <span

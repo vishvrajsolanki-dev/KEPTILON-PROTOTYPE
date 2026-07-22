@@ -45,14 +45,14 @@ export default function AboutPage() {
         <div className="container grid gap-6 md:grid-cols-2">
           <div className="panel p-8 md:p-10">
             <p className="eyebrow">Vision</p>
-            <p className="mt-4 font-[family-name:var(--font-fraunces)] text-2xl leading-snug">
+            <p className="mt-4 font-[family-name:var(--font-cormorant)] text-2xl leading-snug">
               A world-class ecosystem of ventures that solves critical human
               challenges through clarity and purpose.
             </p>
           </div>
           <div className="panel p-8 md:p-10">
             <p className="eyebrow">Mission</p>
-            <p className="mt-4 font-[family-name:var(--font-fraunces)] text-2xl leading-snug">
+            <p className="mt-4 font-[family-name:var(--font-cormorant)] text-2xl leading-snug">
               To give people uncompromising guidance and the means to act on it,
               at every stage of the journey.
             </p>

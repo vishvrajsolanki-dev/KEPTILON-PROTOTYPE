@@ -19,14 +19,14 @@ export default function DestinyPage() {
           <div className="mb-8 flex items-center gap-3">
             <Link
               href="/"
-              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+              className="font-[family-name:var(--font-cormorant)] text-sm tracking-[0.12em] text-[var(--ink)]"
             >
               KEPTILON
             </Link>
             <span className="text-[var(--line)]" aria-hidden>
               |
             </span>
-            <span className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--destiny)]">
+            <span className="font-[family-name:var(--font-cormorant)] text-lg text-[var(--destiny)]">
               Destiny
             </span>
           </div>

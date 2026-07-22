@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="border-t border-[var(--line)] bg-[var(--bg)]">
       <div className="container py-14">
         <div className="mb-12 text-center md:text-left">
-          <p className="font-[family-name:var(--font-fraunces)] text-lg tracking-[0.12em] text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-cormorant)] text-lg tracking-[0.12em] text-[var(--ink)]">
             KEPTILON
           </p>
           <p className="mt-2 text-sm text-[var(--ink-3)]">

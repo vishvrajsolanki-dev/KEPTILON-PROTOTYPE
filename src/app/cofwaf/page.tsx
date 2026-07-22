@@ -60,14 +60,14 @@ export default function CofWafPage() {
           <div className="mb-8 flex items-center gap-3">
             <Link
               href="/"
-              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+              className="font-[family-name:var(--font-cormorant)] text-sm tracking-[0.12em] text-[var(--ink)]"
             >
               KEPTILON
             </Link>
             <span className="text-[var(--line)]" aria-hidden>
               |
             </span>
-            <span className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--terracotta)]">
+            <span className="font-[family-name:var(--font-cormorant)] text-lg text-[var(--terracotta)]">
               CofWaf
             </span>
           </div>
@@ -207,7 +207,7 @@ export default function CofWafPage() {
                   rel="noopener noreferrer"
                   className="group block rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] p-5 transition hover:border-[var(--terracotta)] hover:shadow-[var(--shadow-lift)]"
                 >
-                  <p className="font-[family-name:var(--font-fraunces)] text-lg italic text-[var(--ink)]">
+                  <p className="font-[family-name:var(--font-cormorant)] text-lg italic text-[var(--ink)]">
                     “{p.quote}”
                   </p>
                   <p className="mt-3 text-sm font-bold text-[var(--terracotta)]">
@@ -233,7 +233,7 @@ export default function CofWafPage() {
               Instagram cadence — runs at The Krater first. If it does not
               survive a Saturday rush, it does not reach a client.
             </p>
-            <blockquote className="mt-8 border-l-2 border-[var(--terracotta)] pl-5 font-[family-name:var(--font-fraunces)] text-xl italic text-[var(--ink)]">
+            <blockquote className="mt-8 border-l-2 border-[var(--terracotta)] pl-5 font-[family-name:var(--font-cormorant)] text-xl italic text-[var(--ink)]">
               The food was always good. What changed is that the business behind
               it finally runs as well as the kitchen does.
               <footer className="mt-3 text-sm not-italic text-[var(--ink-3)]">

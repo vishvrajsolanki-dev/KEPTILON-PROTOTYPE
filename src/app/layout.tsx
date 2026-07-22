@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/lib/theme";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
@@ -49,7 +50,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${fraunces.variable} ${manrope.variable} antialiased`}>
+      <body className={`${cormorant.variable} ${outfit.variable} antialiased`}>
         <ThemeProvider>
           <div className="grain" aria-hidden />
           <div className="site-shell">

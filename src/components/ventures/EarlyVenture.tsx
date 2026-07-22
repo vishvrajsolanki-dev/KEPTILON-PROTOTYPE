@@ -116,7 +116,7 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
           <div className="mb-8 flex items-center gap-3">
             <Link
               href="/"
-              className="font-[family-name:var(--font-fraunces)] text-sm tracking-[0.12em] text-[var(--ink)]"
+              className="font-[family-name:var(--font-cormorant)] text-sm tracking-[0.12em] text-[var(--ink)]"
             >
               KEPTILON
             </Link>
@@ -124,7 +124,7 @@ function EarlyVenturePage({ spec }: { spec: EarlySpec }) {
               |
             </span>
             <span
-              className="font-[family-name:var(--font-fraunces)] text-lg"
+              className="font-[family-name:var(--font-cormorant)] text-lg"
               style={{ color: v.accent }}
             >
               {v.name}
