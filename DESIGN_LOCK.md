@@ -270,7 +270,12 @@ Spotlight cursor · magnetic buttons · 3D tilt spam · starfield hero · scroll
 
 Story · Vision/Mission · Brand architecture (five doors) · What we are/aren’t · Legal entity · Contact CTA  
 
-### Contact `/contact`
+### Contact `/contact` (elevation approved)
+1. Soft green/terracotta washes · green H1 · locked routing lede · email alt  
+2. Stage/venture as accent-dot chips (incl. Not sure yet) — not a heavy select  
+3. Form as the only interaction surface (quiet line, radius 12–16, elevated parchment)  
+4. CofWaf → calm WhatsApp path (editorial rule, not loud box)  
+5. Quiet Arc routing cue under form (Self→Capital doors)  
 Prompt · Stage/venture selector · Form · Email alt · WhatsApp path if CofWaf  
 
 ### CofWaf `/cofwaf`
@@ -322,4 +327,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** About elevation + Home v2 + How We Work elevation + Font Option B
+**Last locked:** Contact elevation + About + Home v2 + How We Work + Font B
