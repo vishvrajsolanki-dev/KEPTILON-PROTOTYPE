@@ -7,7 +7,7 @@ import { arcStages } from "@/data/arc";
 import { useTheme } from "@/lib/theme";
 import { Button } from "@/components/ui/Button";
 
-const links = [
+const utilityLinks = [
   { href: "/#arc", label: "The Arc" },
   { href: "/how-we-work", label: "How We Work" },
   { href: "/about", label: "About" },
@@ -17,7 +17,6 @@ export function Header() {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
-  const [venturesOpen, setVenturesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--nav-bg)] backdrop-blur-md">
@@ -27,69 +26,57 @@ export function Header() {
       >
         Skip to content
       </a>
-      <div className="container flex h-[72px] items-center justify-between gap-4">
+      <div className="container flex h-[72px] items-center justify-between gap-3 xl:gap-4">
         <Link
           href="/"
-          className="font-[family-name:var(--font-fraunces)] text-[1.15rem] font-semibold tracking-[0.08em] text-[var(--ink)]"
+          className="shrink-0 font-[family-name:var(--font-fraunces)] text-[1.1rem] font-semibold tracking-[0.08em] text-[var(--ink)] xl:text-[1.15rem]"
           aria-label="Keptilon home"
         >
           KEPTILON
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {links.map((link) => (
+        {/* Desktop: ventures directly in navbar + utility links */}
+        <nav
+          className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex xl:gap-2"
+          aria-label="Primary"
+        >
+          {arcStages.map((v) => {
+            const active = pathname === v.href;
+            return (
+              <Link
+                key={v.id}
+                href={v.href}
+                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[0.78rem] font-semibold tracking-wide transition xl:px-3 xl:text-[0.82rem] ${
+                  active
+                    ? "bg-[var(--green-soft)] text-[var(--ink)]"
+                    : "text-[var(--ink-2)] hover:bg-[var(--green-soft)] hover:text-[var(--ink)]"
+                }`}
+                aria-current={active ? "page" : undefined}
+              >
+                <span
+                  className="h-1.5 w-1.5 rounded-full"
+                  style={{ background: v.accent }}
+                  aria-hidden
+                />
+                {v.name}
+              </Link>
+            );
+          })}
+          <span className="mx-1 hidden h-4 w-px bg-[var(--line)] xl:block" aria-hidden />
+          {utilityLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`relative py-2 text-[0.82rem] font-medium tracking-wide text-[var(--ink-2)] transition-colors hover:text-[var(--ink)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--green)] after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                pathname === link.href ? "text-[var(--ink)] after:scale-x-100" : ""
+              className={`relative hidden py-2 text-[0.78rem] font-medium tracking-wide text-[var(--ink-2)] transition-colors hover:text-[var(--ink)] xl:inline ${
+                pathname === link.href ? "text-[var(--ink)]" : ""
               }`}
             >
               {link.label}
             </Link>
           ))}
-
-          <div
-            className="relative"
-            onMouseEnter={() => setVenturesOpen(true)}
-            onMouseLeave={() => setVenturesOpen(false)}
-          >
-            <button
-              type="button"
-              className="flex items-center gap-1 py-2 text-[0.82rem] font-medium tracking-wide text-[var(--ink-2)] hover:text-[var(--ink)]"
-              aria-expanded={venturesOpen}
-              aria-haspopup="true"
-              onClick={() => setVenturesOpen((v) => !v)}
-            >
-              Ventures
-              <span aria-hidden className="text-[0.65rem]">
-                ▾
-              </span>
-            </button>
-            {venturesOpen && (
-              <div className="absolute left-0 top-full min-w-[240px] rounded-xl border border-[var(--line)] bg-[var(--bg-elevated)] p-2 shadow-[var(--shadow-lift)]">
-                {arcStages.map((v) => (
-                  <Link
-                    key={v.id}
-                    href={v.href}
-                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-[var(--ink-2)] hover:bg-[var(--green-soft)] hover:text-[var(--ink)]"
-                    onClick={() => setVenturesOpen(false)}
-                  >
-                    <span
-                      className="h-2 w-2 rounded-full"
-                      style={{ background: v.accent }}
-                      aria-hidden
-                    />
-                    <span className="font-semibold text-[var(--ink)]">{v.name}</span>
-                    <span className="ml-auto text-xs text-[var(--ink-3)]">{v.stage}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
             onClick={toggleTheme}
@@ -99,7 +86,12 @@ export function Header() {
             {theme === "parchment" ? "☾" : "☀"}
           </button>
           <div className="hidden sm:block">
-            <Button href="/#arc" variant="primary" className="!min-h-11 !px-5 !text-[0.82rem]">
+            <Button
+              href="/#arc"
+              variant="primary"
+              className="!min-h-11 !px-4 !text-[0.78rem] xl:!px-5 xl:!text-[0.82rem]"
+              showArrow={false}
+            >
               Start where you are
             </Button>
           </div>
@@ -120,7 +112,25 @@ export function Header() {
       {open && (
         <div className="border-t border-[var(--line)] bg-[var(--bg)] px-6 py-5 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
-            {links.map((link) => (
+            <p className="px-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink-3)]">
+              Ventures
+            </p>
+            {arcStages.map((v) => (
+              <Link
+                key={v.id}
+                href={v.href}
+                className="flex items-center gap-3 rounded-lg px-3 py-3 font-medium"
+                onClick={() => setOpen(false)}
+              >
+                <span className="h-2 w-2 rounded-full" style={{ background: v.accent }} />
+                <span>{v.name}</span>
+                <span className="ml-auto text-xs text-[var(--ink-3)]">{v.stage}</span>
+              </Link>
+            ))}
+            <p className="mt-3 px-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink-3)]">
+              House
+            </p>
+            {utilityLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -130,22 +140,8 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <p className="mt-3 px-3 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink-3)]">
-              Ventures
-            </p>
-            {arcStages.map((v) => (
-              <Link
-                key={v.id}
-                href={v.href}
-                className="flex items-center gap-3 rounded-lg px-3 py-3"
-                onClick={() => setOpen(false)}
-              >
-                <span className="h-2 w-2 rounded-full" style={{ background: v.accent }} />
-                {v.name}
-              </Link>
-            ))}
             <div className="mt-4">
-              <Button href="/#arc" className="w-full">
+              <Button href="/#arc" className="w-full" showArrow={false}>
                 Start where you are
               </Button>
             </div>
