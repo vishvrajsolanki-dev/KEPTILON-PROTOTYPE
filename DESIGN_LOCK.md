@@ -300,8 +300,11 @@ Academy hero: warm library study
 TalentX hero: assessment conversation · Employer/Candidate editorial doors  
 Venture hero: founders + advisor · Founder/Investor editorial doors  
 
-### Privacy / Terms
-Content kept; visual restyle only; placeholders remain until filled  
+### Privacy / Terms (elevation approved)
+- Soft green wash · green Cormorant H1 · hairline under title  
+- Section H2s with green hairline rule · editorial max-width · no cards  
+- Content kept; placeholders remain until filled  
+- Cross-links Privacy ↔ Terms  
 
 ---
 
@@ -335,4 +338,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** All Arc Hub pages elevated (Home→Venture) + Font B · Privacy/Terms pending
+**Last locked:** Full Arc Hub elevation complete (Home→Legal) + Font B

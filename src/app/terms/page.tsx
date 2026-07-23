@@ -6,25 +6,54 @@ export const metadata: Metadata = {
   description: "Terms and Conditions for Keptilon Universe Pvt Ltd.",
 };
 
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mt-12 space-y-4 text-[var(--ink-2)] first:mt-14">
+      <div className="flex items-center gap-3">
+        <span className="h-px w-8 bg-[var(--green)]" aria-hidden />
+        <h2 className="display text-2xl text-[var(--green)]">{title}</h2>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+/** Terms — legal elevation (content unchanged) */
 export default function TermsPage() {
   return (
-    <main id="main" className="section pt-24 md:pt-28">
-      <article className="container max-w-3xl">
-        <p className="eyebrow">Legal</p>
-        <h1 className="display mt-4 text-4xl">Terms and Conditions</h1>
-        <p className="mt-4 text-sm text-[var(--ink-3)]">Last updated: 22 Jul 2026</p>
+    <main id="main" className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute -left-24 top-0 h-[360px] w-[360px] rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, color-mix(in srgb, var(--green) 9%, transparent) 0%, transparent 68%)",
+        }}
+        aria-hidden
+      />
 
-        <section className="mt-12 space-y-4 text-[var(--ink-2)]">
-          <h2 className="display text-2xl text-[var(--ink)]">1. Introduction</h2>
+      <article className="container relative max-w-3xl pb-24 pt-24 md:pt-28">
+        <p className="eyebrow">Legal</p>
+        <h1 className="display mt-4 text-[clamp(2.2rem,4vw,3.2rem)] text-[var(--green)]">
+          Terms and Conditions
+        </h1>
+        <p className="mt-4 text-sm text-[var(--ink-3)]">Last updated: 22 Jul 2026</p>
+        <div className="mt-8 h-px w-full bg-[var(--line)]" />
+
+        <Section title="1. Introduction">
           <p>
             Welcome to Keptilon — a house of ventures serving individuals,
             professionals, founders and leaders. By accessing or using our
             services, you agree to these Terms and Conditions.
           </p>
-        </section>
+        </Section>
 
-        <section className="mt-10 space-y-4 text-[var(--ink-2)]">
-          <h2 className="display text-2xl text-[var(--ink)]">2. Venture-specific terms</h2>
+        <Section title="2. Venture-specific terms">
           <ul className="list-disc space-y-3 pl-5">
             <li>
               <strong className="text-[var(--ink)]">Destiny:</strong> Astrological,
@@ -52,39 +81,43 @@ export default function TermsPage() {
               remain responsible for their operations and decisions.
             </li>
           </ul>
-        </section>
+        </Section>
 
-        <section className="mt-10 space-y-4 text-[var(--ink-2)]">
-          <h2 className="display text-2xl text-[var(--ink)]">3. Payments and refunds</h2>
+        <Section title="3. Payments and refunds">
           <p>
             Payments are processed securely. Fees are non-refundable unless
             explicitly stated in a service agreement or required by law.
           </p>
-        </section>
+        </Section>
 
-        <section className="mt-10 space-y-4 text-[var(--ink-2)]">
-          <h2 className="display text-2xl text-[var(--ink)]">4. Limitation of liability</h2>
+        <Section title="4. Limitation of liability">
           <p>
             To the maximum extent permitted by law, Keptilon and its affiliates
             shall not be liable for indirect, incidental, special, consequential
             or punitive damages. Keptilon provides guidance; you remain
             accountable for your decisions and actions.
           </p>
-        </section>
+        </Section>
 
-        <section className="mt-10 space-y-4 text-[var(--ink-2)]">
-          <h2 className="display text-2xl text-[var(--ink)]">5. Contact</h2>
+        <Section title="5. Contact">
           <p>
             Questions:{" "}
-            <a className="text-[var(--green)] underline" href="mailto:hello@keptilon.com">
+            <a
+              className="text-[var(--green)] underline"
+              href="mailto:hello@keptilon.com"
+            >
               hello@keptilon.com
             </a>
           </p>
-        </section>
+        </Section>
 
-        <p className="mt-12 text-sm text-[var(--ink-3)]">
+        <p className="mt-14 text-sm text-[var(--ink-3)]">
           <Link href="/" className="underline hover:text-[var(--ink)]">
             ← Back to Keptilon
+          </Link>
+          {" · "}
+          <Link href="/privacy" className="underline hover:text-[var(--ink)]">
+            Privacy Policy
           </Link>
         </p>
       </article>
