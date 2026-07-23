@@ -294,10 +294,11 @@ Prompt · Stage/venture selector · Form · Email alt · WhatsApp path if CofWaf
 - Four steps as connected timeline · elsewhere as hairline rows  
 - Enrollment + ethos as editorial aside  
 
-### Academy / TalentX / Venture (elevation — Academy approved; shared elevated skeleton)
+### Academy / TalentX / Venture (elevation approved)
 Shared elevated skeleton: branch mark · open split hero with soft-edge visual plane · quiet Arc crumb · offerings as accent-dot editorial list · steps as connected timeline · elsewhere hairline rows · ethos aside · waitlist/talk + stage note  
-Academy hero photo: warm library study (elevated asset)  
-TalentX: Employer/Candidate doors · Venture: Founder/Investor doors  
+Academy hero: warm library study  
+TalentX hero: assessment conversation · Employer/Candidate editorial doors  
+Venture hero: founders + advisor · Founder/Investor editorial doors  
 
 ### Privacy / Terms
 Content kept; visual restyle only; placeholders remain until filled  
@@ -334,4 +335,4 @@ If technically blocked: stop, explain, propose alternatives, wait.
 - [ ] Would not be confused with a different design  
 
 **Document owner:** Implementation engineer mode  
-**Last locked:** TalentX elevation (photo + doors) + Academy + Destiny + CofWaf + Contact + About + Home v2 + How We Work + Font B
+**Last locked:** All Arc Hub pages elevated (Home→Venture) + Font B · Privacy/Terms pending
